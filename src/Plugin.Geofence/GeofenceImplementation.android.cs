@@ -103,7 +103,7 @@ namespace Plugin.Geofence
                 }
                 var intent = new Intent(Application.Context, typeof(GeofenceTransitionsIntentService));
                 System.Diagnostics.Debug.WriteLine("Returning intent");
-                mGeofencePendingIntent = PendingIntent.GetService(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent);
+                mGeofencePendingIntent = PendingIntent.GetService(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
                 return mGeofencePendingIntent;
             }
         }

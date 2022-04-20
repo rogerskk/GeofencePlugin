@@ -16,7 +16,7 @@ namespace Plugin.Geofence
     /// Service that handles geofence events
     /// </summary>
     [Service]
-    public class GeofenceTransitionsIntentService : IntentService
+    public class GeofenceTransitionsIntentService : JobIntentService
     {
         static int NotificationId = 0;
         const int  NotificationMaxId = 6;
@@ -26,7 +26,7 @@ namespace Plugin.Geofence
         /// Handles geofence intent arrival
         /// </summary>
         /// <param name="intent"></param>
-        protected override void OnHandleIntent(Intent intent)
+        protected override void OnHandleWork(Intent intent)
         {
             try
             {
